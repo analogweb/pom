@@ -2,4 +2,4 @@ language: java
 jdk:
   - openjdk7
   - oraclejdk7
-script: "mvn install -f analog-parent-modules.pom.xml"
+script: "mvn install -f analogweb-parent-modules.pom.xml"
