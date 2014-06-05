@@ -1,7 +1,5 @@
-<!--
-    The MIT Lisence Copyright (c) 2011,2012 Analog Web Framework Development Team
-
-	Team. Permission is hereby granted, free of charge, to any person obtaining 
+<!-- The MIT Lisence Copyright (c) 2011,2012 Analog Web Framework Development 
+	Team Team. Permission is hereby granted, free of charge, to any person obtaining 
 	a copy of this software and associated documentation files (the "Software"), 
 	to deal in the Software without restriction, including without limitation 
 	the rights to use, copy, modify, merge, publish, distribute, sublicense, 
@@ -14,29 +12,27 @@
 	IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
 	DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
 	ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
-	DEALINGS IN THE SOFTWARE. 
--->
+	DEALINGS IN THE SOFTWARE. -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.analogweb</groupId>
 	<artifactId>analogweb-parent-modules</artifactId>
 	<packaging>pom</packaging>
-	<version>5</version>
+	<version>6</version>
 	<name>analogweb-parent-modules</name>
 	<url>https://github.com/analogweb/pom</url>
 	<organization>
 		<name>Analog Web Framework Development Team</name>
 	</organization>
 	<properties>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.compiler.source>1.8</maven.compiler.source>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 	<scm>
 		<connection>scm:git:git@github.com:analogweb/pom.git</connection>
-		<developerConnection>scm:git:git@github.com:analogweb/pom.git</developerConnection></scm>
+		<developerConnection>scm:git:git@github.com:analogweb/pom.git</developerConnection>
+	</scm>
 	<licenses>
 		<license>
 			<name>MIT license</name>
@@ -116,29 +112,6 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.7</version>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<source>${maven.compiler.source}</source>
-					<encoding>${project.build.sourceEncoding}</encoding>
-					<docencoding>${project.build.sourceEncoding}</docencoding>
-					<charset>${project.build.sourceEncoding}</charset>
-					<links>
-						<link>http://docs.oracle.com/javase/6/docs/api/</link>
-					</links>
-                                        <additionalparam>-Xdoclint:none</additionalparam>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.2.1</version>
 			</plugin>
@@ -197,11 +170,6 @@
 					<dependencyDetailsEnabled>false</dependencyDetailsEnabled>
 					<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.7</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -341,6 +309,79 @@
 								</goals>
 							</execution>
 						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>java7</id>
+			<activation>
+				<jdk>1.7</jdk>
+			</activation>
+			<properties>
+				<maven.compiler.target>1.7</maven.compiler.target>
+				<maven.compiler.source>1.7</maven.compiler.source>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.7</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<source>${maven.compiler.source}</source>
+							<encoding>${project.build.sourceEncoding}</encoding>
+							<docencoding>${project.build.sourceEncoding}</docencoding>
+							<charset>${project.build.sourceEncoding}</charset>
+							<links>
+								<link>http://docs.oracle.com/javase/7/docs/api/</link>
+							</links>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>java8</id>
+			<activation>
+				<jdk>1.8</jdk>
+			</activation>
+			<properties>
+				<maven.compiler.target>1.8</maven.compiler.target>
+				<maven.compiler.source>1.8</maven.compiler.source>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.7</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<source>${maven.compiler.source}</source>
+							<encoding>${project.build.sourceEncoding}</encoding>
+							<docencoding>${project.build.sourceEncoding}</docencoding>
+							<charset>${project.build.sourceEncoding}</charset>
+							<links>
+								<link>http://docs.oracle.com/javase/8/docs/api/</link>
+							</links>
+        					<additionalparam>-Xdoclint:none</additionalparam>
+						</configuration>
 					</plugin>
 				</plugins>
 			</build>
