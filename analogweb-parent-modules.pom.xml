@@ -85,32 +85,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!--
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>2.6</version>
-				<configuration>
-					<formats>
-						<format>xml</format>
-						<format>html</format>
-					</formats>
-					<check>
-						<haltOnFailure>true</haltOnFailure>
-						<totalBranchRate>90</totalBranchRate>
-						<totalLineRate>90</totalLineRate>
-					</check>
-				</configuration>
-				<executions>
-					<execution>
-						<phase>pre-site</phase>
-						<goals>
-							<goal>clean</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -145,26 +119,12 @@
 				<version>2.5</version>
 			</plugin>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>findbugs-maven-plugin</artifactId>
-				<version>2.3.3</version>
-				<configuration>
-					<xmlOutput>true</xmlOutput>
-					<effort>Default</effort>
-					<threshold>Normal</threshold>
-					<sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-					<outputEncoding>${project.build.sourceEncoding}</outputEncoding>
-				</configuration>
-			</plugin>
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<linkXref>true</linkXref>
 					<sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
 					<minimumTokens>100</minimumTokens>
-					<targetJdk>${maven.compiler.target}</targetJdk>
 				</configuration>
 			</plugin>
 			<plugin>
