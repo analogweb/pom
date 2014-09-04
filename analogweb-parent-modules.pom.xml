@@ -24,14 +24,28 @@
 	<version>7</version>
 	<name>analogweb-parent-modules</name>
 	<url>http://analogweb.org</url>
-	<organization>
+    <description>Analogweb is tiny,simple,and pluggable web framework.</description>
+    <organization>
 		<name>Analog Web Framework Development Team</name>
-	</organization>
+    </organization>
+    <developers>
+        <developer>
+            <id>snowgooseyk</id>
+            <name>snowgooseyk</name>
+            <email>snowgoose.yk@gmail.com</email>
+            <url/>
+            <organization/>
+            <organizationUrl/>
+            <roles/>
+            <timezone>UTC+9</timezone>
+        </developer>
+    </developers>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 	<scm>
+		<url>scm:git:git@github.com:analogweb/pom.git</url>
 		<connection>scm:git:git@github.com:analogweb/pom.git</connection>
 		<developerConnection>scm:git:git@github.com:analogweb/pom.git</developerConnection>
 	</scm>
@@ -43,7 +57,17 @@
 			<comments>All source code is under the MIT license</comments>
 		</license>
 	</licenses>
-	<build>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+    <build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -142,7 +166,18 @@
 				<artifactId>javancss-maven-plugin</artifactId>
 				<version>2.0</version>
 			</plugin>
-		</plugins>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.2</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+        </plugins>
 	</build>
 	<dependencyManagement>
 		<dependencies>
