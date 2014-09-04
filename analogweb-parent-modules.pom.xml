@@ -1,4 +1,5 @@
-<!-- The MIT Lisence Copyright (c) 2011,2012 Analog Web Framework Development 
+<!--
+    The MIT Lisence Copyright (c) 2011,2012 Analog Web Framework Development 
 	Team Team. Permission is hereby granted, free of charge, to any person obtaining 
 	a copy of this software and associated documentation files (the "Software"), 
 	to deal in the Software without restriction, including without limitation 
@@ -12,16 +13,17 @@
 	IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
 	DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
 	ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
-	DEALINGS IN THE SOFTWARE. -->
+    DEALINGS IN THE SOFTWARE. 
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.analogweb</groupId>
 	<artifactId>analogweb-parent-modules</artifactId>
 	<packaging>pom</packaging>
-	<version>6</version>
+	<version>7</version>
 	<name>analogweb-parent-modules</name>
-	<url>https://github.com/analogweb/pom</url>
+	<url>http://analogweb.org</url>
 	<organization>
 		<name>Analog Web Framework Development Team</name>
 	</organization>
@@ -266,5 +268,29 @@
 				</plugins>
 			</build>
 		</profile>
+		<profile>
+			<id>signature</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.5</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+            </build>
+        </profile>
 	</profiles>
 </project>
