@@ -21,7 +21,7 @@
 	<groupId>org.analogweb</groupId>
 	<artifactId>analogweb-parent-modules</artifactId>
 	<packaging>pom</packaging>
-	<version>8-SNAPSHOT</version>
+	<version>8</version>
 	<name>analogweb-parent-modules</name>
 	<url>http://analogweb.org</url>
     <description>Analogweb is tiny,simple,and pluggable web framework.</description>
@@ -254,7 +254,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>2.7</version>
+						<version>2.10.1</version>
 						<executions>
 							<execution>
 								<id>attach-javadocs</id>
@@ -290,7 +290,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>2.7</version>
+						<version>2.10.1</version>
 						<executions>
 							<execution>
 								<id>attach-javadocs</id>
