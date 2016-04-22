@@ -22,7 +22,7 @@
   <groupId>org.analogweb</groupId>
   <artifactId>analogweb-parent-modules</artifactId>
   <packaging>pom</packaging>
-  <version>10</version>
+  <version>11</version>
   <name>analogweb-parent-modules</name>
   <url>http://analogweb.org</url>
   <description>Analogweb is tiny,simple,and pluggable web framework.</description>
@@ -31,9 +31,9 @@
   </organization>
   <developers>
     <developer>
-      <id>snowgooseyk</id>
-      <name>snowgooseyk</name>
-      <email>snowgoose.yk@gmail.com</email>
+      <id>y2k2mt</id>
+      <name>y2k2mt</name>
+      <email>y2.k2mt@gmail.com</email>
       <url />
       <organization />
       <organizationUrl />
@@ -90,7 +90,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.3</version>
+        <version>3.5.1</version>
         <configuration>
           <source>${maven.compiler.source}</source>
           <target>${maven.compiler.target}</target>
@@ -100,7 +100,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.18.1</version>
+        <version>2.19.1</version>
         <configuration>
           <argLine>-Dfile.encoding=UTF-8 ${jacoco-args}</argLine>
         </configuration>
@@ -108,7 +108,7 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.7.5.201505241946</version>
+        <version>0.7.6.201602180812</version>
         <executions>
           <execution>
             <id>prepare-test</id>
@@ -142,7 +142,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
-        <version>2.4</version>
+        <version>3.0.0</version>
         <inherited>true</inherited>
         <executions>
           <execution>
@@ -156,12 +156,12 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
-        <version>2.5.1</version>
+        <version>2.5.3</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
-        <version>3.4</version>
+        <version>3.6</version>
         <configuration>
           <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
           <minimumTokens>100</minimumTokens>
@@ -180,7 +180,7 @@
       <plugin>
         <groupId>org.sonatype.plugins</groupId>
         <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.5</version>
+        <version>1.6.7</version>
         <extensions>true</extensions>
         <configuration>
           <serverId>ossrh</serverId>
