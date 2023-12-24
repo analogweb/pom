@@ -108,7 +108,7 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>net.revelc.code</groupId>
+        <groupId>net.revelc.code.formatter</groupId>
         <artifactId>formatter-maven-plugin</artifactId>
         <version>2.23.0</version>
       </plugin>
@@ -226,7 +226,7 @@
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
-        <version>2.9.0</version>
+        <version>5.8.0</version>
         <exclusions>
           <exclusion>
             <groupId>org.hamcrest</groupId>
@@ -296,6 +296,7 @@
               </execution>
             </executions>
             <configuration>
+              <!-- https://bugs.openjdk.org/browse/JDK-8212233 -->
               <source>${maven.compiler.source}</source>
               <encoding>${project.build.sourceEncoding}</encoding>
               <docencoding>${project.build.sourceEncoding}</docencoding>
